@@ -16,7 +16,7 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
-
+app.use("/uploads", express.static("uploads"));
 app.use(function (req, res, next) {
   res.setHeader(
     "Content-Security-Policy",
