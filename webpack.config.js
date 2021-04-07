@@ -1,6 +1,6 @@
 const path = require("path");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const autoprefixer = require("autoprefixer");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const MODE = process.env.WEBPACK_ENV;
 const ENTRY_FILE = path.resolve(__dirname, "assets", "js", "main.js");
@@ -12,18 +12,32 @@ const config = {
   module: {
     rules: [
       {
-        test: /\(.scss)$/,
+        test: /\.(scss)$/,
         use: [
-          { loader: MiniCssExtractPlugin.loader },
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          {
+            loader: "css-loader",
+          },
           {
             loader: "postcss-loader",
             options: {
               postcssOptions: {
-                plugins: [autoprefixer, { browsers: "cover 99.5%" }],
+                plugins: [
+                  [
+                    "autoprefixer",
+                    {
+                      browsers: "cover 99.5%",
+                    },
+                  ],
+                ],
               },
             },
           },
-          { loader: "sass-loader" },
+          {
+            loader: "sass-loader",
+          },
         ],
       },
     ],
@@ -34,7 +48,9 @@ const config = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "[name].css",
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: "styles.css",
     }),
   ],
 };
