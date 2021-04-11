@@ -1,0 +1,8 @@
+@import "./config/_variables.scss";
+.videos {
+  display: flex;
+}
+video {
+  width: 277px;
+  height: 150px;
+}

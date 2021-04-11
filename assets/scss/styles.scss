@@ -1,3 +1,10 @@
 @import "./config/_variables.scss";
 @import "./config/reset.scss";
-@import "partials/header.scss";
+@import "./partials/header.scss";
+@import "./partials/footer.scss";
+@import "./pages/home.scss";
+
+main {
+  padding: 23px 34px;
+  background-color: #f9f9f9;
+}

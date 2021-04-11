@@ -1,0 +1,52 @@
+header {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 12px;
+}
+form {
+  display: flex;
+}
+header > .header__column:first-child > a {
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+}
+i {
+  color: $red;
+}
+h1 {
+  font-weight: 600;
+  margin: 5px;
+}
+input {
+  width: 674px;
+  height: 30px;
+  color: black;
+}
+
+ul {
+  display: flex;
+}
+li {
+  margin-right: 13px;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+button > i {
+  color: black;
+}
+button {
+  border: none;
+  color: black;
+  cursor: pointer;
+  box-shadow: none;
+  background: none;
+}
+button:focus {
+  border: none;
+  outline: none;
+}
